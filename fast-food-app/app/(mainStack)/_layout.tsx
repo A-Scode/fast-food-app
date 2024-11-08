@@ -10,19 +10,20 @@ export default function TabLayout() {
 
   return (
     <Stack
+    
       screenOptions={{
         headerShown: false,
       }}>
       <Stack.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'Log In',
         }}
       />
       <Stack.Screen
-        name="explore"
+        name="signup"
         options={{
-          title: 'Explore',
+          title: 'Sign Up',
         }}
       />
     </Stack>
