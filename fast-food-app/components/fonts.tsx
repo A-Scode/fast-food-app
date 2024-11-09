@@ -1,9 +1,9 @@
-import { SizableText, styled } from "tamagui";
+import { Button, SizableText, styled } from "tamagui";
 
 export const LargeHeading = styled(SizableText , {
     fontWeight: "bold",
-    fontSize: "$10",
-    lineHeight: "$10",
+    fontSize: "$9",
+    lineHeight: "$9",
 })
 export const InputLabel = styled(SizableText , {
     fontSize: "$6",
@@ -12,7 +12,12 @@ export const InputLabel = styled(SizableText , {
 export const LinkedText = styled(SizableText , {
     fontSize: "$6",
     lineHeight: "$6",
-    color: "#FF6E14",
+    color: "#FF5900",
     fontWeight: "bold",
     textDecorationLine: "underline",
+})
+
+export const LabelText = styled(SizableText , {
+    fontSize: "$6",
+    lineHeight: "$6",
 })
