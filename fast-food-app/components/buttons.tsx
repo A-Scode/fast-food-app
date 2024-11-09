@@ -11,6 +11,6 @@ export const SecondaryButton = styled(Button , {
     fontSize: "$8",
     borderRadius:"$9",
     borderWidth: "$1",
-    borderColor: "black",
+    borderColor: "#595959",
     height: "$4",
 })

@@ -1,6 +1,7 @@
-import { PrimaryButton } from '@/components/buttons';
+import { PrimaryButton, SecondaryButton } from '@/components/buttons';
 import Divider from '@/components/divider';
 import { InputLabel, LabelText, LargeHeading, LinkedText } from '@/components/fonts';
+import { StyledInput } from '@/components/inputs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Link } from 'expo-router';
 import { StyleSheet, Image, Platform } from 'react-native';
@@ -15,15 +16,15 @@ export default function SignupScreen() {
         <YStack style={{gap: 10}}>
           <View>
           <InputLabel>Name</InputLabel>
-          <Input flex={1} size={'$6'} placeholder="Name" keyboardType='default' borderWidth={2}  />
+          <StyledInput flex={1} size={'$6'} placeholder="Name" keyboardType='default' borderWidth={2}  />
           </View>
           <View>
           <InputLabel>Email</InputLabel>
-          <Input flex={1} size={'$6'} placeholder="Your email" keyboardType='email-address' borderWidth={2}  />
+          <StyledInput flex={1} size={'$6'} placeholder="Your email" keyboardType='email-address' borderWidth={2}  />
           </View>
           <View>
           <InputLabel>Password</InputLabel>
-          <Input flex={1} size={'$6'} placeholder="Password" borderWidth={2} secureTextEntry  />
+          <StyledInput flex={1} size={'$6'} placeholder="Password" borderWidth={2} secureTextEntry  />
           </View>
           {/* <LinkedText style={{alignSelf: 'flex-end'}}>Forgot Password?</LinkedText> */}
         </YStack>
@@ -35,6 +36,10 @@ export default function SignupScreen() {
             <LabelText>Sign in with </LabelText>
       <Divider width="20%"/>
           </XStack>
+          <YStack style={styles.otherLogins}>
+            <SecondaryButton>Continue with Google</SecondaryButton>
+            <SecondaryButton>Continue with Facebook</SecondaryButton>
+          </YStack>
     </ScrollView>
   );
 }
@@ -55,5 +60,11 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute',
   },
+
+  otherLogins:{
+    gap:20 , 
+    paddingHorizontal: 20,
+    marginVertical: 20
+  }
 });
 

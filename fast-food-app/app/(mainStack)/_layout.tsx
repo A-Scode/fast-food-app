@@ -26,6 +26,12 @@ export default function TabLayout() {
           title: 'Sign Up',
         }}
       />
+      <Stack.Screen
+        name="adminLogin"
+        options={{
+          title: 'Admin Login',
+        }}
+      />
     </Stack>
   );
 }

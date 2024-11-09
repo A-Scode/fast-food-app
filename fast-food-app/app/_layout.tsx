@@ -8,9 +8,8 @@ import 'react-native-reanimated';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 import defaultConfig from '@tamagui/config/v3'
-import { createTamagui, TamaguiProvider } from 'tamagui';
-
-const config = createTamagui(defaultConfig)
+import { createTamagui, TamaguiProvider, Theme } from 'tamagui';
+import config from '@/tamagui.config';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -32,13 +31,20 @@ export default function RootLayout() {
   }
 
   return (
-    // <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={{...DefaultTheme, colors:{...DefaultTheme.colors, background: '#fff' }}}>
       <TamaguiProvider config={config}>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="(mainStack)" />
+        <Theme name={"light"}>
+      <Stack screenOptions={{ headerShown: false,
+        contentStyle:{
+          backgroundColor: 'transparent'
+        }
+       }}>
+        <Stack.Screen name="(mainStack)"/>
         <Stack.Screen name="+not-found" />
       </Stack>
+
+        </Theme>
       </TamaguiProvider>
-    // </ThemeProvider>
+     </ThemeProvider>
   );
 }

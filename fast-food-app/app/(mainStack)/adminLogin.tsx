@@ -4,15 +4,14 @@ import { InputLabel, LabelText, LargeHeading, LinkedText } from '@/components/fo
 import { StyledInput } from '@/components/inputs';
 import { Link } from 'expo-router';
 import { Image, StyleSheet, Platform } from 'react-native';
-// import GoogleIcon from '../../assets/google.svg';
 
-import { Button, Input, Label, ScrollView, SizableStack, SizableText, View, XStack, YStack } from 'tamagui';
+import { Input, Label, ScrollView, SizableStack, SizableText, View, XStack, YStack } from 'tamagui';
 
-export default function LoginScreen() {
+export default function AdminLoginScreen() {
   return (
     <ScrollView contentContainerStyle={{paddingTop:150}}>
       <View style={styles.loginContainer}>
-        <LargeHeading style={{backgroundColor: 'transparent'}}>Login</LargeHeading>
+        <LargeHeading style={{backgroundColor: 'transparent'}}>Admin Login</LargeHeading>
         <YStack style={{gap: 10}}>
           <View>
           <InputLabel>Email</InputLabel>
@@ -26,21 +25,7 @@ export default function LoginScreen() {
         </YStack>
           <PrimaryButton >Login</PrimaryButton>
           <XStack style={{alignSelf: 'center', gap:10}}><LabelText>Don't have an account?</LabelText><Link href="/(mainStack)/signup"><LinkedText>Sign Up</LinkedText></Link></XStack>
-          <XStack style={{alignSelf: 'center', gap:10}}><LabelText>admin</LabelText><Link href="/(mainStack)/adminLogin"><LinkedText> Login </LinkedText></Link></XStack>
       </View>
-          <XStack style={{alignSelf: 'center' , gap: 10 , marginHorizontal: 20}}>
-      <Divider width="20%"/>
-            <LabelText>Sign in with </LabelText>
-      <Divider width="20%"/>
-          </XStack>
-          <YStack style={styles.otherLogins}>
-            <SecondaryButton>
-              {/* <Button.Icon >
-                <Image source={require('../../assets/google.svg')} />
-                </Button.Icon> */}
-              Continue with Google</SecondaryButton>
-            <SecondaryButton>Continue with Facebook</SecondaryButton>
-          </YStack>
     </ScrollView>
   );
 }
