@@ -26,4 +26,6 @@ const CurrentToast = () => {
       </Toast>
     )
   }
+
+  export default CurrentToast
   

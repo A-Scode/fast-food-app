@@ -11,6 +11,7 @@ import defaultConfig from '@tamagui/config/v3'
 import { createTamagui, TamaguiProvider, Theme } from 'tamagui';
 import config from '@/tamagui.config';
 import { MMKVLoader } from "react-native-mmkv-storage";
+import CurrentToast from '@/components/toast';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -49,6 +50,8 @@ export default function RootLayout() {
         <Stack.Screen name="(mainStack)"/>
         <Stack.Screen name="+not-found" />
       </Stack>
+
+       {/* <CurrentToast /> */}
 
         </Theme>
       </TamaguiProvider>
